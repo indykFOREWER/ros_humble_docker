@@ -22,6 +22,8 @@ RUN apt-get update \
     COPY entrypoint.sh /entrypoint.sh
     COPY bashrc /home/$USERNAME/.bashrc 
 
+    USER ros
+    
     ENTRYPOINT [ "/bin/bash", "/entrypoint.sh" ]
 
     CMD ["bash"]
